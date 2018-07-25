@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Forecasts</h1>
+
+    {% if forecast_list %}
+        <ul>
+            {% for forecast in forecast_list %}
+                <li>
+                    <a href="{% url 'forecast-view' forecast.pk %}">{{ forecast }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>There are no forecasts</p>
+    {% endif %}
+{% endblock %}
